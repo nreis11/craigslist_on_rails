@@ -12,6 +12,7 @@
     <header>
       <%= link_to("Home", root_path) %>
     </header>
+    <%= render "layouts/errors", errors: @errors %>
     <%= yield %>
   </body>
 </html>
