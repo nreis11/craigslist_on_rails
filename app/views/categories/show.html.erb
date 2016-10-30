@@ -2,6 +2,6 @@
 
 <ul>
 <% @category.articles.each do |article| %>
-    <li><%= link_to(article.title, article) %></li>
+    <li><%= link_to(article.title, article) %> <%= link_to("Edit", edit_article_path(article)) %></li>
 <% end %>
 </ul>
