@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :body
       t.float :price
+      t.string :edit_key
       t.references :category, foreign_key: true
 
       t.timestamps
