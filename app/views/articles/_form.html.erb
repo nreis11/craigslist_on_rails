@@ -1,7 +1,5 @@
 <%= form_for(article) do |f| %>
   
-  
-
   <div class="field">
     <%= f.label :category %>
     <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] } %>
