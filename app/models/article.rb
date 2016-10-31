@@ -3,7 +3,7 @@ require "securerandom"
 class Article < ApplicationRecord
   belongs_to :category
 
-  before_create :generate_edit_key
+  before_save :generate_edit_key
 
   validates :title, presence: true
   validates :body, presence: true

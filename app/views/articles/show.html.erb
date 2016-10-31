@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p>Your secret url to edit this article is <%= flash[:notice] %></p>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -5,7 +9,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%=  "$" + "#{@article.price}" %>
+  <%= "$" + "#{@article.price}" %>
 </p>
 
 <p>
@@ -13,4 +17,4 @@
   <%= @article.body %>
 </p>
 
-<%= link_to("<<Back", category_path(@article.category)) %>
+<%= link_to("<< Back", category_path(@article.category)) %>
