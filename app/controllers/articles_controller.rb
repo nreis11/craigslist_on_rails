@@ -4,6 +4,13 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+
+    if request.xhr?
+      render partial: "form"
+      # render "/articles/_form",locals:{article:@article},layout:false
+    else
+      redirect_to article_path(@article)
+    end
   end
 
   def show
@@ -17,7 +24,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = set_edit_url
       redirect_to article_path(@article)
     else
-      @errors = @article.errors.full_messages 
+      @errors = @article.errors.full_messages
       render :new
     end
   end

@@ -1,5 +1,6 @@
 $(document).on("turbolinks:load", function() {
   deleteButtonListener();
+  newArticleLinkListener();
 });
 
   var deleteButtonListener = function() {
@@ -21,4 +22,17 @@ $(document).on("turbolinks:load", function() {
     });
   });
 };
+
+  var newArticleLinkListener = function() {
+  $("#new-article-link").on("ajax:success", function(e, data, status, xhr){
+      $("#new-article-container").html(data);
+    })
+
+    .on("ajax:error", function(e, data, status, error){
+      console.error(error)
+    });
+}
+
+
+
 

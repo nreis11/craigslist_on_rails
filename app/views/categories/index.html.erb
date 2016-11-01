@@ -12,4 +12,6 @@
   <% end %>
 </table>
 
-<%= link_to("Create New Article", new_article_path ) %>
+<div id="new-article-container">
+  <%= link_to("Create New Article", new_article_path, remote: true, id: "new-article-link") %>
+</div>
