@@ -6,8 +6,8 @@ class ArticlesController < ApplicationController
     @article = Article.new
 
     if request.xhr?
+      # Form for tag refers to instance variable
       render partial: "form"
-      # render "/articles/_form",locals:{article:@article},layout:false
     else
       redirect_to article_path(@article)
     end
