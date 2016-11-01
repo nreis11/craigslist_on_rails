@@ -1,6 +1,9 @@
 $(document).on("turbolinks:load", function() {
-  console.log("SUCCESS!");
-  $(".delete-button").on("click", function(event) {
+  deleteButtonListener();
+});
+
+  var deleteButtonListener = function() {
+    $(".delete-button").on("click", function(event) {
     event.preventDefault();
     console.log("CLICKED!");
 
@@ -13,8 +16,9 @@ $(document).on("turbolinks:load", function() {
     })
 
   request.done(function(response) {
-    $(clickButtonTarget).parent().remove()
+    $(clickButtonTarget).parent().remove();
     console.log("REMOVED")
-    })
-  })
-})
+    });
+  });
+};
+
